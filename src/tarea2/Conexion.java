@@ -1,3 +1,5 @@
+package tarea2;
+
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.sql.Connection;
