@@ -4,17 +4,19 @@
  */
 package tarea2;
 
+import tarea2.Conexion;
+
 /**
  *
  * @author pablo
  */
 public class Tarea2 {
-//Que haaaaaaayyyyyyyy pablitooooooooooooo
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Conexion con = new Conexion();
+        con.conectar("registro");
     }
     
 }
