@@ -9,7 +9,6 @@ import java.sql.SQLException;
 public class Conexion {
     String bd ="registro";
     String url="jdbc:mysql://localhost:3306/";
-    // String url="jdbc:mysql://127.0.0.1:3306/";
     String user="root";
     String password="root";
     String driver="com.mysql.cj.jdbc.Driver";

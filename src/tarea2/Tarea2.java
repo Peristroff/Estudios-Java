@@ -4,6 +4,8 @@
  */
 package tarea2;
 
+import javax.swing.UIManager;
+
 import tarea2.Conexion;
 
 /**
@@ -17,6 +19,17 @@ public class Tarea2 {
     public static void main(String[] args) {
         Conexion con = new Conexion();
         con.conectar("registro");
+
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            JFrameForm ui = new JFrameForm();
+            ui.setVisible(true);
+        });
     }
-    
+
 }
