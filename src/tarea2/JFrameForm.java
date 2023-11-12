@@ -13,9 +13,11 @@ import java.awt.Image;
 import javax.swing.JLabel;
 import java.io.IOException;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * @author juan o(*￣▽￣*)o
  * @author pablo
  */
 public class JFrameForm extends javax.swing.JFrame {
@@ -99,15 +101,15 @@ public class JFrameForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        CajaOro = new javax.swing.JTextField();
+        CajaPlata = new javax.swing.JTextField();
+        CajaBronce = new javax.swing.JTextField();
+        BotonAgregar = new javax.swing.JButton();
+        BotonModificar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel7 = new javax.swing.JLabel();
+        Medallero = new javax.swing.JTable();
+        Bandera = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -147,40 +149,46 @@ public class JFrameForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setText("Bronce");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        CajaOro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CajaOro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                CajaOroActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        CajaPlata.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CajaPlata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                CajaPlataActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        CajaBronce.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CajaBronce.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                CajaBronceActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Agregar");
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setText("Modificar");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BotonAgregar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BotonAgregar.setText("Agregar");
+        BotonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BotonAgregarActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        BotonModificar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BotonModificar.setText("Modificar");
+        BotonModificar.setToolTipText("");
+        BotonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonModificarActionPerformed(evt);
+            }
+        });
+
+        model = (DefaultTableModel) Medallero.getModel();
+        Medallero.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -199,7 +207,7 @@ public class JFrameForm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Medallero);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -217,11 +225,11 @@ public class JFrameForm extends javax.swing.JFrame {
                 .addGap(0, 27, Short.MAX_VALUE))
         );
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/antigua_y_barbuda.png"))); // NOI18N
-        jLabel7.setMaximumSize(new java.awt.Dimension(230, 175));
-        jLabel7.setMinimumSize(new java.awt.Dimension(230, 175));
-        jLabel7.setPreferredSize(new java.awt.Dimension(230, 175));
+        Bandera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Bandera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/antigua_y_barbuda.png"))); // NOI18N
+        Bandera.setMaximumSize(new java.awt.Dimension(230, 175));
+        Bandera.setMinimumSize(new java.awt.Dimension(230, 175));
+        Bandera.setPreferredSize(new java.awt.Dimension(230, 175));
 
         try {
             // Carga la imagen utilizando ImageIO
@@ -235,11 +243,11 @@ public class JFrameForm extends javax.swing.JFrame {
             // Crea un ImageIcon con la imagen escalada
             ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
 
-            jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel7.setMaximumSize(new java.awt.Dimension(230, 175));
-            jLabel7.setMinimumSize(new java.awt.Dimension(230, 175));
-            jLabel7.setPreferredSize(new java.awt.Dimension(230, 175));
-            jLabel7.setIcon(iconoEscalado); // NOI18N
+            Bandera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            Bandera.setMaximumSize(new java.awt.Dimension(230, 175));
+            Bandera.setMinimumSize(new java.awt.Dimension(230, 175));
+            Bandera.setPreferredSize(new java.awt.Dimension(230, 175));
+            Bandera.setIcon(iconoEscalado); // NOI18N
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -253,7 +261,7 @@ public class JFrameForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(jButton1))
+                        .addComponent(BotonAgregar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -272,7 +280,7 @@ public class JFrameForm extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(CajaOro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -280,17 +288,17 @@ public class JFrameForm extends javax.swing.JFrame {
                                         .addGap(18, 18, 18))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CajaPlata, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(27, 27, 27)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(CajaBronce, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(BotonModificar)
                                 .addGap(32, 32, 32)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Bandera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(308, 308, 308))
         );
         jPanel1Layout.setVerticalGroup(
@@ -311,14 +319,14 @@ public class JFrameForm extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CajaOro, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CajaBronce, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CajaPlata, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Bandera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(BotonAgregar)
+                    .addComponent(BotonModificar))
                 .addGap(42, 42, 42)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -455,7 +463,12 @@ public class JFrameForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    DefaultTableModel model;
+    public void agregarFilaTabla(String pais, int oro, int plata, int bronce, int medallasTotales, Icon bandera)
+    {
+        model.addRow(new Object[]{pais, oro, plata, bronce, medallasTotales, bandera});
+    }
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) 
     {//GEN-FIRST:event_jComboBox1ActionPerformed
         // Add your handling code here:
@@ -475,11 +488,11 @@ public class JFrameForm extends javax.swing.JFrame {
             // Crea un ImageIcon con la imagen escalada
             ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
         
-            jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel7.setMaximumSize(new java.awt.Dimension(230, 175));
-            jLabel7.setMinimumSize(new java.awt.Dimension(230, 175));
-            jLabel7.setPreferredSize(new java.awt.Dimension(230, 175));
-            jLabel7.setIcon(iconoEscalado); // NOI18N
+            Bandera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            Bandera.setMaximumSize(new java.awt.Dimension(230, 175));
+            Bandera.setMinimumSize(new java.awt.Dimension(230, 175));
+            Bandera.setPreferredSize(new java.awt.Dimension(230, 175));
+            Bandera.setIcon(iconoEscalado); // NOI18N
         } 
         catch (IOException e) 
         {
@@ -487,25 +500,51 @@ public class JFrameForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void CajaOroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaOroActionPerformed
         // Add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_CajaOroActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void CajaPlataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaPlataActionPerformed
         // Add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_CajaPlataActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void CajaBronceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaBronceActionPerformed
         // Add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_CajaBronceActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void BotonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarActionPerformed
+
+    }//GEN-LAST:event_BotonModificarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
+            String pais = jComboBox1.getSelectedItem().toString();
+        
+        int oro = 0, plata = 0, bronce = 0;
+        
+        try
+        {
+            String tOro = CajaOro.getText();
+            String tPlata = CajaPlata.getText();
+            String tBronce = CajaBronce.getText();
+            
+            oro = Integer.parseInt(tOro);
+            plata = Integer.parseInt(tPlata);
+            bronce = Integer.parseInt(tBronce);
+
+        } catch (NumberFormatException e){
+            String mensajeError = "Error: Ingresa números válidos de medallas.";
+            JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        Icon bandera = Bandera.getIcon();
+        int medallasTotales = oro + plata + bronce;
+        
+        agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, bandera);        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -543,8 +582,13 @@ public class JFrameForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel Bandera;
+    private javax.swing.JButton BotonAgregar;
+    private javax.swing.JButton BotonModificar;
+    private javax.swing.JTextField CajaBronce;
+    private javax.swing.JTextField CajaOro;
+    private javax.swing.JTextField CajaPlata;
+    private javax.swing.JTable Medallero;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -557,7 +601,6 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -568,9 +611,5 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

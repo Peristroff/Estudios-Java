@@ -48,7 +48,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotonAgregar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -72,7 +72,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel5" min="-2" pref="95" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="CajaOro" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -82,7 +82,7 @@
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextField2" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="CajaPlata" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <Component id="jLabel4" min="-2" pref="96" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -90,18 +90,18 @@
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel6" min="-2" pref="96" max="-2" attributes="0"/>
-                                          <Component id="jTextField3" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="CajaBronce" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BotonModificar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel7" max="-2" attributes="0"/>
+                      <Component id="Bandera" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -126,17 +126,17 @@
                               </Group>
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField1" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="jTextField3" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="jTextField2" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="CajaOro" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="CajaBronce" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="CajaPlata" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jLabel7" alignment="0" max="-2" attributes="0"/>
+                          <Component id="Bandera" alignment="0" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BotonAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BotonModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -244,45 +244,48 @@
                 <Property name="text" type="java.lang.String" value="Bronce"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="CajaOro">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CajaOroActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="CajaPlata">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CajaPlataActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="CajaBronce">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CajaBronceActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="BotonAgregar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAgregarActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="BotonModificar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
@@ -291,7 +294,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonModificarActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel4">
@@ -323,7 +326,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable1">
+                    <Component class="javax.swing.JTable" name="Medallero">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="6" rowCount="4">
@@ -336,12 +339,15 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="model = (DefaultTableModel) Medallero.getModel();"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="Bandera">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -358,7 +364,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePre" type="java.lang.String" value="try {&#xd;&#xa;            // Carga la imagen utilizando ImageIO&#xd;&#xa;            java.awt.Image imagenOriginal = ImageIO.read(getClass().getResource(&quot;/imagenes/antigua_y_barbuda.png&quot;));&#xd;&#xa;        &#xd;&#xa;            // Escala la imagen al tama&#xf1;o de la etiqueta&#xd;&#xa;            int anchoEtiqueta = 211;&#xd;&#xa;            int altoEtiqueta = 121;&#xd;&#xa;            Image imagenEscalada = imagenOriginal.getScaledInstance(anchoEtiqueta, altoEtiqueta, Image.SCALE_SMOOTH);&#xd;&#xa;        &#xd;&#xa;            // Crea un ImageIcon con la imagen escalada&#xd;&#xa;            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);&#xd;&#xa;        &#xd;&#xa;            jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);&#xd;&#xa;            jLabel7.setMaximumSize(new java.awt.Dimension(230, 175));&#xd;&#xa;            jLabel7.setMinimumSize(new java.awt.Dimension(230, 175));&#xd;&#xa;            jLabel7.setPreferredSize(new java.awt.Dimension(230, 175));&#xd;&#xa;            jLabel7.setIcon(iconoEscalado); // NOI18N&#xd;&#xa;        &#xd;&#xa;        } catch (IOException e) {&#xd;&#xa;            e.printStackTrace();&#xd;&#xa;        }"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePre" type="java.lang.String" value="try {&#xd;&#xa;            // Carga la imagen utilizando ImageIO&#xd;&#xa;            java.awt.Image imagenOriginal = ImageIO.read(getClass().getResource(&quot;/imagenes/antigua_y_barbuda.png&quot;));&#xd;&#xa;        &#xd;&#xa;            // Escala la imagen al tama&#xf1;o de la etiqueta&#xd;&#xa;            int anchoEtiqueta = 211;&#xd;&#xa;            int altoEtiqueta = 121;&#xd;&#xa;            Image imagenEscalada = imagenOriginal.getScaledInstance(anchoEtiqueta, altoEtiqueta, Image.SCALE_SMOOTH);&#xd;&#xa;        &#xd;&#xa;            // Crea un ImageIcon con la imagen escalada&#xd;&#xa;            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);&#xd;&#xa;        &#xd;&#xa;            Bandera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);&#xd;&#xa;            Bandera.setMaximumSize(new java.awt.Dimension(230, 175));&#xd;&#xa;            Bandera.setMinimumSize(new java.awt.Dimension(230, 175));&#xd;&#xa;            Bandera.setPreferredSize(new java.awt.Dimension(230, 175));&#xd;&#xa;            Bandera.setIcon(iconoEscalado); // NOI18N&#xd;&#xa;        &#xd;&#xa;        } catch (IOException e) {&#xd;&#xa;            e.printStackTrace();&#xd;&#xa;        }"/>
               </AuxValues>
             </Component>
           </SubComponents>
