@@ -346,9 +346,6 @@
                           </Table>
                         </Property>
                       </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="model = (DefaultTableModel) Medallero.getModel();"/>
-                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>

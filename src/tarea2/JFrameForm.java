@@ -4,6 +4,7 @@
  */
 package tarea2;
 
+import java.awt.Component;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -14,15 +15,17 @@ import javax.swing.JLabel;
 import java.io.IOException;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-
 /**
- * @author juan o(*￣▽￣*)o
+ * @author juan o(*￣▽￣*)o "es poco, pero es trabajo honesto"
  * @author pablo
  */
-public class JFrameForm extends javax.swing.JFrame {
+public class JFrameForm extends javax.swing.JFrame {    
     private HashMap<String, String> mapaPaises = new HashMap<>();
     
+    DefaultTableModel model;
     /**
      * Creates new form JFrameForm
      */
@@ -82,6 +85,19 @@ public class JFrameForm extends javax.swing.JFrame {
         mapaPaises.put("Trinidad y Tobago", "/imagenes/trinidad_y_tobago.png");
         mapaPaises.put("Uruguay", "/imagenes/uruguay.png");
         mapaPaises.put("Venezuela", "/imagenes/venezuela.png");
+        
+        // Inicializar la tabla
+        model = new DefaultTableModel();
+        model.addColumn("Paises");
+        model.addColumn("Oro");
+        model.addColumn("Plata");
+        model.addColumn("Bronce");
+        model.addColumn("Medallas totales");
+        model.addColumn("Bandera");
+
+        Medallero.setModel(model);
+        
+        Medallero.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
     }
 
     /**
@@ -219,7 +235,6 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         });
 
-        model = (DefaultTableModel) Medallero.getModel();
         Medallero.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -665,7 +680,6 @@ public class JFrameForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    DefaultTableModel model;
     void agregarFilaTabla(String pais, int oro, int plata, int bronce, int medallasTotales, Icon bandera)
     {
         model.addRow(new Object[]{pais, oro, plata, bronce, medallasTotales, bandera});
@@ -742,10 +756,15 @@ public class JFrameForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        Icon bandera = Bandera.getIcon();
+        ImageIcon bandera = (ImageIcon) Bandera.getIcon();
+        
+        // Escalar la imagen antes de agregarla a la tabla
+        int ancho = 30;  // Establecer el ancho deseado
+        int alto = 30;   // Establecer el alto deseado
+        ImageIcon banderaEscalada = escalarImagen(bandera, ancho, alto);
         int medallasTotales = oro + plata + bronce;
 
-        agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, bandera);
+        agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, banderaEscalada);
 
         // Esto agrega los datos a la base de datos (falta probar)
         Conexion con = new Conexion();
@@ -755,7 +774,25 @@ public class JFrameForm extends javax.swing.JFrame {
         // TODO advertir al usuario con una ventana que los datos ya estan agregados si es que se intenta agregar de nuevo
 
     }//GEN-LAST:event_BotonAgregarMouseClicked
-
+    private class ImageRenderer extends DefaultTableCellRenderer {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                if (value instanceof Icon) {
+                    setIcon((Icon) value);
+                    setText("");
+                } else {
+                    setIcon(null);
+                    setText("N/A");
+                }
+                return this;
+            }
+        }
+    
+    private ImageIcon escalarImagen(ImageIcon imagenIcono, int ancho, int alto) {
+        Image imagenOriginal = imagenIcono.getImage();
+        Image imagenEscalada = imagenOriginal.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
+        return new ImageIcon(imagenEscalada);
+    }
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
