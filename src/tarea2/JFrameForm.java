@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JFrameForm extends javax.swing.JFrame {
     private HashMap<String, String> mapaPaises = new HashMap<>();
-
+    
     /**
      * Creates new form JFrameForm
      */
@@ -208,6 +208,11 @@ public class JFrameForm extends javax.swing.JFrame {
         BotonModificar.setText("Modificar");
         BotonModificar.setToolTipText("");
         BotonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonModificarMouseClicked(evt);
+            }
+        });
         BotonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonModificarActionPerformed(evt);
@@ -710,11 +715,11 @@ public class JFrameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_CajaBronceActionPerformed
 
     private void BotonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarActionPerformed
-
+        // add your handling code here:
     }//GEN-LAST:event_BotonModificarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        // add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void BotonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarMouseClicked
@@ -744,6 +749,7 @@ public class JFrameForm extends javax.swing.JFrame {
 
         // Esto agrega los datos a la base de datos (falta probar)
         Conexion con = new Conexion();
+        con.conectar();
         con.agregarBD(pais, oro, plata, bronce, medallasTotales);
 
         // TODO advertir al usuario con una ventana que los datos ya estan agregados si es que se intenta agregar de nuevo
@@ -751,12 +757,16 @@ public class JFrameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonAgregarMouseClicked
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
+        // add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonModificarMouseClicked
 
     /**
      * @param args the command line arguments

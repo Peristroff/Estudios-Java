@@ -13,20 +13,19 @@ public class Conexion {
     String user="root";
     String password="root";
     String driver="com.mysql.cj.jdbc.Driver";
-    Connection conexion = null;
     Connection con;
 
-    public Connection conectar(String bd){
+    public Connection conectar(){
         System.out.println(bd);
         try{
             Class.forName(driver);
             con = DriverManager.getConnection(url + bd, user, password);
             System.out.println("Se conecto a "+bd);
         } catch (Exception ex){
-            // java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             System.out.println("No se conecto a "+bd);
         }
-        return conexion;
+        return con;
     }
 
     public void desconectar(){
@@ -41,21 +40,51 @@ public class Conexion {
     {
         try 
         {
-            String sql = "INSERT INTO medallero (paises, oro, plata, bronce, medallastotales) VALUES (?, ?, ?, ?, ?)";
-            java.sql.PreparedStatement pst = conexion.prepareStatement(sql);
-
-            pst.setString(1, pais);
-            pst.setInt(2, oro);
-            pst.setInt(3, plata);
-            pst.setInt(4, bronce);
-            pst.setInt(5, medallastotales);
-
-            pst.executeUpdate();
-
+            if(con != null)
+            {
+                String sql = "INSERT INTO medallero (paises, oro, plata, bronce, medallastotales) VALUES (?, ?, ?, ?, ?)";
+                java.sql.PreparedStatement pst = con.prepareStatement(sql);
+    
+                pst.setString(1, pais);
+                pst.setInt(2, oro);
+                pst.setInt(3, plata);
+                pst.setInt(4, bronce);
+                pst.setInt(5, medallastotales);
+    
+                pst.executeUpdate();
+            }
+            else
+            {
+                System.err.println("La conexión es null.");
+            }
         } catch (Exception e) {
             java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
         }
         
     }
     
+    public void mostrarBD()
+    {
+        try 
+        {
+            if(con != null)
+            {
+                Statement st = con.createStatement();
+                java.sql.ResultSet rs = st.executeQuery("SELECT * FROM medallero");
+    
+                while(rs.next())
+                {
+                    
+                    System.out.println(rs.getString("paises") + " " + rs.getInt("oro") + " " + rs.getInt("plata") + " " + rs.getInt("bronce") + " " + rs.getInt("medallastotales"));
+                }
+            }
+            else
+            {
+                System.err.println("La conexión es null.");
+            }
+        } catch (Exception e) {
+            java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
+        }
+    }
+
 }

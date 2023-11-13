@@ -11,7 +11,7 @@ import javax.swing.*;
 import tarea2.Conexion;
 
 /**
- *
+ * 
  * @author pablo
  */
 public class Tarea2 {
@@ -20,7 +20,7 @@ public class Tarea2 {
      */
     public static void main(String[] args) {
         Conexion con = new Conexion();
-        con.conectar("registro");
+        con.conectar();
 
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
