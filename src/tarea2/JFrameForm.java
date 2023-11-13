@@ -741,6 +741,13 @@ public class JFrameForm extends javax.swing.JFrame {
         int medallasTotales = oro + plata + bronce;
 
         agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, bandera);
+
+        // Esto agrega los datos a la base de datos (falta probar)
+        Conexion con = new Conexion();
+        con.agregarBD(pais, oro, plata, bronce, medallasTotales);
+
+        // TODO advertir al usuario con una ventana que los datos ya estan agregados si es que se intenta agregar de nuevo
+
     }//GEN-LAST:event_BotonAgregarMouseClicked
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
