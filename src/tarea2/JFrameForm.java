@@ -172,15 +172,17 @@ public class JFrameForm extends javax.swing.JFrame {
 
         BotonAgregar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         BotonAgregar.setText("Agregar");
-        BotonAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAgregarActionPerformed(evt);
+        BotonAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonAgregarMouseClicked(evt);
             }
         });
 
         BotonModificar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         BotonModificar.setText("Modificar");
         BotonModificar.setToolTipText("");
+        BotonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonModificarActionPerformed(evt);
@@ -199,9 +201,16 @@ public class JFrameForm extends javax.swing.JFrame {
                 "Paises", "Oro", "Plata", "Bronce", "Medallas totales", "Bandera"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -338,11 +347,11 @@ public class JFrameForm extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1018, Short.MAX_VALUE)
+            .addGap(0, 1024, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 779, Short.MAX_VALUE)
+            .addGap(0, 791, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -422,7 +431,7 @@ public class JFrameForm extends javax.swing.JFrame {
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addContainerGap(635, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,7 +452,7 @@ public class JFrameForm extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(418, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -464,7 +473,7 @@ public class JFrameForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     DefaultTableModel model;
-    public void agregarFilaTabla(String pais, int oro, int plata, int bronce, int medallasTotales, Icon bandera)
+    void agregarFilaTabla(String pais, int oro, int plata, int bronce, int medallasTotales, Icon bandera)
     {
         model.addRow(new Object[]{pais, oro, plata, bronce, medallasTotales, bandera});
     }
@@ -520,8 +529,8 @@ public class JFrameForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
-            String pais = jComboBox1.getSelectedItem().toString();
+    private void BotonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarMouseClicked
+        String pais = jComboBox1.getSelectedItem().toString();
         
         int oro = 0, plata = 0, bronce = 0;
         
@@ -542,9 +551,9 @@ public class JFrameForm extends javax.swing.JFrame {
         
         Icon bandera = Bandera.getIcon();
         int medallasTotales = oro + plata + bronce;
-        
-        agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, bandera);        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonAgregarActionPerformed
+
+        agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, bandera);
+    }//GEN-LAST:event_BotonAgregarMouseClicked
 
     /**
      * @param args the command line arguments
