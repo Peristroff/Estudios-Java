@@ -1,7 +1,4 @@
-
-nbproject/genfiles.properties
-nbproject/private/private.properties
-nbproject/build-impl.xml
+nbproject/
 build/
 dist/
 test/
