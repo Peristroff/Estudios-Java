@@ -5,6 +5,7 @@ import java.lang.System.Logger.Level;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Conexion {
     String bd ="registro";
@@ -34,6 +35,27 @@ public class Conexion {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    }
+
+    public void agregarBD(String pais, int oro, int plata, int bronce, int medallastotales)
+    {
+        try 
+        {
+            String sql = "INSERT INTO medallero (paises, oro, plata, bronce, medallastotales) VALUES (?, ?, ?, ?, ?)";
+            java.sql.PreparedStatement pst = conexion.prepareStatement(sql);
+
+            pst.setString(1, pais);
+            pst.setInt(2, oro);
+            pst.setInt(3, plata);
+            pst.setInt(4, bronce);
+            pst.setInt(5, medallastotales);
+
+            pst.executeUpdate();
+
+        } catch (Exception e) {
+            java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
+        }
+        
     }
     
 }
