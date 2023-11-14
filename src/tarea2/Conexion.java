@@ -15,7 +15,7 @@ public class Conexion {
     String bd = "registro";
     String url = "jdbc:mysql://localhost:3306/";
     String user = "root";
-    String password = "root";
+    String password = "";
     String driver = "com.mysql.cj.jdbc.Driver";
     Connection con;
 
