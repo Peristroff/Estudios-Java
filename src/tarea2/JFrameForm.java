@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * @author dodsiño
+ * @author dodsiño Quiero un cesarito locoooooo
  * @author juan o(*￣▽￣*)o "es poco, pero es trabajo honesto"
  * @author pablo
  */
