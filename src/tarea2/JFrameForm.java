@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+
 /**
  * @author juan o(*￣▽￣*)o "es poco, pero es trabajo honesto"
  * @author pablo
@@ -680,6 +681,7 @@ public class JFrameForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
     void agregarFilaTabla(String pais, int oro, int plata, int bronce, int medallasTotales, Icon bandera)
     {
         model.addRow(new Object[]{pais, oro, plata, bronce, medallasTotales, bandera});
@@ -770,6 +772,9 @@ public class JFrameForm extends javax.swing.JFrame {
         Conexion con = new Conexion();
         con.conectar();
         con.agregarBD(pais, oro, plata, bronce, medallasTotales);
+
+        // FIXME
+        con.verificarPais(pais);
 
         // TODO advertir al usuario con una ventana que los datos ya estan agregados si es que se intenta agregar de nuevo
 
