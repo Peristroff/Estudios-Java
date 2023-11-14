@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * @author dodsiño
  * @author juan o(*￣▽￣*)o "es poco, pero es trabajo honesto"
  * @author pablo
  */
