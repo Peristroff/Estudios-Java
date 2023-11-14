@@ -742,6 +742,7 @@ public class JFrameForm extends javax.swing.JFrame {
     private void BotonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarMouseClicked
         String pais = jComboBox1.getSelectedItem().toString();
         
+        boolean posibleAgregar = true;
         int oro = 0, plata = 0, bronce = 0;
         
         try
@@ -755,6 +756,7 @@ public class JFrameForm extends javax.swing.JFrame {
             bronce = Integer.parseInt(tBronce);
 
         } catch (NumberFormatException e){
+            posibleAgregar = false;
             String mensajeError = "Error: Ingresa números válidos de medallas.";
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -766,8 +768,14 @@ public class JFrameForm extends javax.swing.JFrame {
         int alto = 30;   // Establecer el alto deseado
         ImageIcon banderaEscalada = escalarImagen(bandera, ancho, alto);
         int medallasTotales = oro + plata + bronce;
-
-        agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, banderaEscalada);
+        
+        if (posibleAgregar){
+            if (existePaisEnTabla(pais)) {
+                JOptionPane.showMessageDialog(this, "El país ya existe en la tabla.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, banderaEscalada);
+            }
+        }
 
         // Esto agrega los datos a la base de datos (falta probar)
         Conexion con = new Conexion();
@@ -798,6 +806,20 @@ public class JFrameForm extends javax.swing.JFrame {
         Image imagenOriginal = imagenIcono.getImage();
         Image imagenEscalada = imagenOriginal.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
         return new ImageIcon(imagenEscalada);
+    }
+    private boolean existePaisEnTabla(String nuevoPais) {
+        int columnaPais = 0;  // Índice de la columna "Pais"
+
+        for (int fila = 0; fila < model.getRowCount(); fila++) {
+            Object valorEnCelda = model.getValueAt(fila, columnaPais);
+
+            // Comparar el valor de la celda con el nuevo país
+            if (valorEnCelda != null && valorEnCelda.toString().equals(nuevoPais)) {
+                return true;  // El país ya existe en la tabla
+            }
+        }
+
+        return false;  // El país no existe en la tabla
     }
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // add your handling code here:
