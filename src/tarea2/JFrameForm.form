@@ -418,7 +418,7 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="jButton1" min="-2" pref="103" max="-2" attributes="0"/>
+                                          <Component id="NatacionAgregar" min="-2" pref="103" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -462,13 +462,13 @@
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jTextField12" min="-2" pref="91" max="-2" attributes="0"/>
+                                                  <Component id="AquiResultado" min="-2" pref="91" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace pref="24" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="jButton2" min="-2" pref="103" max="-2" attributes="0"/>
+                                          <Component id="BotonCalcular" min="-2" pref="103" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -542,9 +542,9 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jButton2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jButton1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jTextField12" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="BotonCalcular" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="NatacionAgregar" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="AquiResultado" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
                               </Group>
@@ -670,7 +670,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="Nota8">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="NatacionAgregar">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="18" style="0"/>
@@ -681,10 +681,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NatacionAgregarActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="BotonCalcular">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="18" style="0"/>
@@ -695,10 +695,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotonCalcularMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField12">
+                <Component class="javax.swing.JTextField" name="AquiResultado">
                 </Component>
               </SubComponents>
             </Container>

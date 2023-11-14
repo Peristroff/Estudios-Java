@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import java.awt.Image;
 import javax.swing.JLabel;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -152,9 +153,9 @@ public class JFrameForm extends javax.swing.JFrame {
         Nota6 = new javax.swing.JTextField();
         Nota7 = new javax.swing.JTextField();
         Nota8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField12 = new javax.swing.JTextField();
+        NatacionAgregar = new javax.swing.JButton();
+        BotonCalcular = new javax.swing.JButton();
+        AquiResultado = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -431,21 +432,21 @@ public class JFrameForm extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel23.setText("Nota 8");
 
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jButton1.setText("Agregar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        NatacionAgregar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        NatacionAgregar.setText("Agregar");
+        NatacionAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NatacionAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                NatacionAgregarActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jButton2.setText("Calcular");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        BotonCalcular.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        BotonCalcular.setText("Calcular");
+        BotonCalcular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonCalcular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                BotonCalcularMouseClicked(evt);
             }
         });
 
@@ -462,7 +463,7 @@ public class JFrameForm extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NatacionAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(77, 77, 77))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jTextField3)
@@ -497,10 +498,10 @@ public class JFrameForm extends javax.swing.JFrame {
                                             .addComponent(Nota8)))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(AquiResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(24, Short.MAX_VALUE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BotonCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(204, 204, 204))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,9 +558,9 @@ public class JFrameForm extends javax.swing.JFrame {
                             .addComponent(Nota8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(94, 94, 94)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotonCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NatacionAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AquiResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(268, 268, 268))))
         );
 
@@ -830,17 +831,18 @@ public class JFrameForm extends javax.swing.JFrame {
         // add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void NatacionAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NatacionAgregarActionPerformed
         // add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_NatacionAgregarActionPerformed
 
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonModificarMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        int nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, 
-                nota5 = 0, nota6 = 0, nota7 = 0, nota8 = 0;
+    private void BotonCalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCalcularMouseClicked
+        float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, 
+                nota5 = 0, nota6 = 0, nota7 = 0, nota8 = 0, resultado = 0;
+        double[] notas = null;
         String tnota1 = Nota1.getText();
         String tnota2 = Nota2.getText();
         String tnota3 = Nota3.getText();
@@ -851,20 +853,26 @@ public class JFrameForm extends javax.swing.JFrame {
         String tnota8 = Nota8.getText();
         
         try{
-            nota1 = Integer.parseInt(tnota1);
-            nota2 = Integer.parseInt(tnota2);
-            nota3 = Integer.parseInt(tnota3);
-            nota4 = Integer.parseInt(tnota4);
-            nota5 = Integer.parseInt(tnota5);
-            nota6 = Integer.parseInt(tnota6);
-            nota7 = Integer.parseInt(tnota7);
-            nota8 = Integer.parseInt(tnota8);
+            nota1 = Float.parseFloat(tnota1);
+            nota2 = Float.parseFloat(tnota2);
+            nota3 = Float.parseFloat(tnota3);
+            nota4 = Float.parseFloat(tnota4);
+            nota5 = Float.parseFloat(tnota5);
+            nota6 = Float.parseFloat(tnota6);
+            nota7 = Float.parseFloat(tnota7);
+            nota8 = Float.parseFloat(tnota8);
+            notas = new double[]{nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8};
         }catch(NumberFormatException e){
             String mensajeError = "Error: Ingresa notas válidas.";
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-    }//GEN-LAST:event_jButton2MouseClicked
+        Arrays.sort(notas);
+        double[] notasFiltradas = Arrays.copyOfRange(notas, 2, notas.length - 2);
+        for (double nota : notasFiltradas) {
+                resultado += nota;
+            }
+        AquiResultado.setText(String.valueOf(resultado));
+    }//GEN-LAST:event_BotonCalcularMouseClicked
 
     /**
      * @param args the command line arguments
@@ -902,13 +910,16 @@ public class JFrameForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AquiResultado;
     private javax.swing.JLabel Bandera;
     private javax.swing.JButton BotonAgregar;
+    private javax.swing.JButton BotonCalcular;
     private javax.swing.JButton BotonModificar;
     private javax.swing.JTextField CajaBronce;
     private javax.swing.JTextField CajaOro;
     private javax.swing.JTextField CajaPlata;
     private javax.swing.JTable Medallero;
+    private javax.swing.JButton NatacionAgregar;
     private javax.swing.JTextField NombreNata;
     private javax.swing.JTextField Nota1;
     private javax.swing.JTextField Nota2;
@@ -918,8 +929,6 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JTextField Nota6;
     private javax.swing.JTextField Nota7;
     private javax.swing.JTextField Nota8;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -953,7 +962,6 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
