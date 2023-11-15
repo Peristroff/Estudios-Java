@@ -140,7 +140,7 @@ public class JFrameForm extends javax.swing.JFrame {
         NombreNata = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        Factor = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -409,9 +409,9 @@ public class JFrameForm extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel15.setText("Factor");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Factor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                FactorActionPerformed(evt);
             }
         });
 
@@ -482,7 +482,7 @@ public class JFrameForm extends javax.swing.JFrame {
                                     .addComponent(NatacionAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(77, 77, 77))
                                 .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jTextField3)
+                                    .addComponent(Factor)
                                     .addGap(95, 95, 95)))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -550,7 +550,7 @@ public class JFrameForm extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Factor, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(582, 582, 582))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -610,6 +610,7 @@ public class JFrameForm extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setText("Terminar juegos");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -847,9 +848,9 @@ public class JFrameForm extends javax.swing.JFrame {
         return false;  // El país no existe en la tabla
     }
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void FactorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FactorActionPerformed
         // add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_FactorActionPerformed
 
     private void NatacionAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NatacionAgregarActionPerformed
         // add your handling code here:
@@ -891,7 +892,7 @@ public class JFrameForm extends javax.swing.JFrame {
 
     private void BotonCalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCalcularMouseClicked
         float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, 
-                nota5 = 0, nota6 = 0, nota7 = 0, nota8 = 0, resultado = 0;
+                nota5 = 0, nota6 = 0, nota7 = 0, nota8 = 0, resultado = 0 , factor = 0;
         double[] notas = null;
         String tnota1 = Nota1.getText();
         String tnota2 = Nota2.getText();
@@ -901,6 +902,7 @@ public class JFrameForm extends javax.swing.JFrame {
         String tnota6 = Nota6.getText();
         String tnota7 = Nota7.getText();
         String tnota8 = Nota8.getText();
+        String tfactor = Factor.getText();
         
         try{
             nota1 = Float.parseFloat(tnota1);
@@ -911,6 +913,7 @@ public class JFrameForm extends javax.swing.JFrame {
             nota6 = Float.parseFloat(tnota6);
             nota7 = Float.parseFloat(tnota7);
             nota8 = Float.parseFloat(tnota8);
+            factor = Float.parseFloat(tfactor);
             notas = new double[]{nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8};
         }catch(NumberFormatException e){
             String mensajeError = "Error: Ingresa notas válidas.";
@@ -921,6 +924,7 @@ public class JFrameForm extends javax.swing.JFrame {
         for (double nota : notasFiltradas) {
                 resultado += nota;
             }
+        resultado = resultado * factor;
         AquiResultado.setText(String.valueOf(resultado));
     }//GEN-LAST:event_BotonCalcularMouseClicked
 
@@ -1010,6 +1014,7 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JTextField CajaBronce;
     private javax.swing.JTextField CajaOro;
     private javax.swing.JTextField CajaPlata;
+    private javax.swing.JTextField Factor;
     private javax.swing.JTable Medallero;
     private javax.swing.JButton NatacionAgregar;
     private javax.swing.JTextField NombreNata;
@@ -1055,6 +1060,5 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
