@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -265,6 +267,11 @@ public class JFrameForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        Medallero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MedalleroMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(Medallero);
@@ -873,6 +880,44 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         AquiResultado.setText(String.valueOf(resultado));
     }//GEN-LAST:event_BotonCalcularMouseClicked
+
+    private void MedalleroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedalleroMouseClicked
+        int fila=Medallero.getSelectedRow();
+        if (fila==-1){
+            JOptionPane.showMessageDialog(null, "Usuario No seleccionado");            
+        }else{
+            String pais = (String)Medallero.getValueAt(fila,0);
+            int oro = Integer.parseInt((String)Medallero.getValueAt(fila,1).toString());
+            int plata = Integer.parseInt((String)Medallero.getValueAt(fila,2).toString());
+            int bronce = Integer.parseInt((String)Medallero.getValueAt(fila,3).toString());
+            String rutaImagen = mapaPaises.get(pais);
+            
+            try{
+                java.awt.Image imagenOriginal = ImageIO.read(getClass().getResource(rutaImagen));
+        
+                // Escala la imagen al tamaño de la etiqueta
+                int anchoEtiqueta = 211;
+                int altoEtiqueta = 121;
+                Image imagenEscalada = imagenOriginal.getScaledInstance(anchoEtiqueta, altoEtiqueta, Image.SCALE_SMOOTH);
+
+                // Crea un ImageIcon con la imagen escalada
+                ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+
+                Bandera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                Bandera.setMaximumSize(new java.awt.Dimension(230, 175));
+                Bandera.setMinimumSize(new java.awt.Dimension(230, 175));
+                Bandera.setPreferredSize(new java.awt.Dimension(230, 175));
+                Bandera.setIcon(iconoEscalado); // NOI18N
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            
+            CajaOro.setText(""+oro);
+            CajaPlata.setText(""+plata);
+            CajaBronce.setText(""+bronce);
+            jComboBox1.setSelectedItem(pais);
+        }
+    }//GEN-LAST:event_MedalleroMouseClicked
 
     /**
      * @param args the command line arguments
