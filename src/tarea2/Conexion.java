@@ -81,9 +81,8 @@ public class Conexion {
         }
     }
 
-    // FIXME: No funciona
+    // FIXME la aplicacion busca el pais, pero no en la base de datos, en vez de eso se usa la tabla interna
     public void verificarPais(String pais) {
-        Boolean existe = false;
 
         try {
             if (con != null) {

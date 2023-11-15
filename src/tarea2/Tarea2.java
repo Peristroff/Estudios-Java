@@ -22,6 +22,7 @@ public class Tarea2 {
         Conexion con = new Conexion();
         con.conectar();
 
+        // Desde aqui se invoca a JFrameForm para mostrar la ventana. Se utiliza la version mas reciente de nimbus
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {

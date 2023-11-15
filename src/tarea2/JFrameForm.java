@@ -101,6 +101,9 @@ public class JFrameForm extends javax.swing.JFrame {
         Medallero.setModel(model);
         
         Medallero.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
+
+        // Esto permite que la tabla sea de solo lectura en el UI
+        Medallero.setDefaultEditor(Object.class, null);
     }
 
     /**
@@ -783,15 +786,16 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         }
 
-        // Esto agrega los datos a la base de datos (falta probar)
+        // Esto agrega los datos a la base de datos
         Conexion con = new Conexion();
         con.conectar();
+
+        // Se agrega los datos de la tabla a la base de datos
         con.agregarBD(pais, oro, plata, bronce, medallasTotales);
 
-        // FIXME
+        // Se verifica el pais si ya esta en la base de datos
         con.verificarPais(pais);
 
-        // TODO advertir al usuario con una ventana que los datos ya estan agregados si es que se intenta agregar de nuevo
 
     }//GEN-LAST:event_BotonAgregarMouseClicked
     private class ImageRenderer extends DefaultTableCellRenderer {
@@ -813,6 +817,7 @@ public class JFrameForm extends javax.swing.JFrame {
         Image imagenEscalada = imagenOriginal.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
         return new ImageIcon(imagenEscalada);
     }
+
     private boolean existePaisEnTabla(String nuevoPais) {
         int columnaPais = 0;  // Índice de la columna "Pais"
 
@@ -836,7 +841,7 @@ public class JFrameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_NatacionAgregarActionPerformed
 
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
-        // TODO add your handling code here:
+        // add your handling code here:
     }//GEN-LAST:event_BotonModificarMouseClicked
 
     private void BotonCalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCalcularMouseClicked
