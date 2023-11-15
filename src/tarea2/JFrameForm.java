@@ -780,16 +780,14 @@ public class JFrameForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "El país ya existe en la tabla.", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, banderaEscalada);
+                Conexion con = new Conexion();
+                con.conectar();
+                con.agregarBD(pais, oro, plata, bronce, medallasTotales);
+                
+                con.verificarPais(pais);
             }
         }
 
-        // Esto agrega los datos a la base de datos (falta probar)
-        Conexion con = new Conexion();
-        con.conectar();
-        con.agregarBD(pais, oro, plata, bronce, medallasTotales);
-
-        // FIXME
-        con.verificarPais(pais);
 
         // TODO advertir al usuario con una ventana que los datos ya estan agregados si es que se intenta agregar de nuevo
 
