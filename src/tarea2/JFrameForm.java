@@ -786,14 +786,12 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         }
 
-        // Esto agrega los datos a la base de datos
+        // Esto agrega los datos a la base de datos (falta probar)
         Conexion con = new Conexion();
         con.conectar();
-
-        // Se agrega los datos de la tabla a la base de datos
         con.agregarBD(pais, oro, plata, bronce, medallasTotales);
 
-        // Se verifica el pais si ya esta en la base de datos
+        // FIXME
         con.verificarPais(pais);
 
 
