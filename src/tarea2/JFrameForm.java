@@ -793,19 +793,20 @@ public class JFrameForm extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_BotonAgregarMouseClicked
+
     private class ImageRenderer extends DefaultTableCellRenderer {
-            @Override
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                if (value instanceof Icon) {
-                    setIcon((Icon) value);
-                    setText("");
-                } else {
-                    setIcon(null);
-                    setText("N/A");
-                }
-                return this;
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            if (value instanceof Icon) {
+                setIcon((Icon) value);
+                setText("");
+            } else {
+                setIcon(null);
+                setText("N/A");
             }
+            return this;
         }
+    }
     
     private ImageIcon escalarImagen(ImageIcon imagenIcono, int ancho, int alto) {
         Image imagenOriginal = imagenIcono.getImage();
@@ -827,6 +828,7 @@ public class JFrameForm extends javax.swing.JFrame {
 
         return false;  // El país no existe en la tabla
     }
+
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
@@ -837,6 +839,36 @@ public class JFrameForm extends javax.swing.JFrame {
 
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
         // add your handling code here:
+
+        // FIXME actualizar la tabla con los nuevos valores, la base de datos ya se actualiza
+        String pais = jComboBox1.getSelectedItem().toString();
+        Conexion con = new Conexion();
+        con.conectar();
+        
+        boolean posibleAgregar = true;
+        int oro = 0, plata = 0, bronce = 0;
+        
+        try
+        {
+            String tOro = CajaOro.getText();
+            String tPlata = CajaPlata.getText();
+            String tBronce = CajaBronce.getText();
+            
+            oro = Integer.parseInt(tOro);
+            plata = Integer.parseInt(tPlata);
+            bronce = Integer.parseInt(tBronce);
+
+            int medallasTotales = oro + plata + bronce;
+
+            con.modificarBD(pais, oro, plata, bronce, medallasTotales);
+
+        } catch (NumberFormatException e){
+            posibleAgregar = false;
+            String mensajeError = "Error: Ingresa números válidos de medallas.";
+            JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_BotonModificarMouseClicked
 
     private void BotonCalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCalcularMouseClicked

@@ -114,4 +114,26 @@ public class Conexion {
         }
     }
 
+    public void modificarBD(String pais, int oro, int plata, int bronce, int medallastotales)
+    {
+        try {
+            if (con != null) {
+                String sql = "UPDATE medallero SET oro = ?, plata = ?, bronce = ?, medallastotales = ? WHERE paises = ?";
+                java.sql.PreparedStatement pst = con.prepareStatement(sql);
+
+                pst.setInt(1, oro);
+                pst.setInt(2, plata);
+                pst.setInt(3, bronce);
+                pst.setInt(4, medallastotales);
+                pst.setString(5, pais);
+
+                pst.executeUpdate();
+            } else {
+                System.err.println("La conexión es null.");
+            }
+        } catch (Exception e) {
+            java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
+        }
+    }
+
 }
