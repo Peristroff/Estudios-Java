@@ -169,7 +169,7 @@ public class JFrameForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        TerminarJuegos = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -398,7 +398,7 @@ public class JFrameForm extends javax.swing.JFrame {
                     .addComponent(Bandera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Posiciones", jPanel1);
@@ -613,12 +613,12 @@ public class JFrameForm extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Juegos panamericanos 2023");
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton3.setText("Terminar juegos");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        TerminarJuegos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        TerminarJuegos.setText("Terminar juegos");
+        TerminarJuegos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TerminarJuegos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                TerminarJuegosActionPerformed(evt);
             }
         });
 
@@ -654,7 +654,7 @@ public class JFrameForm extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jButton3))
+                        .addComponent(TerminarJuegos))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -680,7 +680,7 @@ public class JFrameForm extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TerminarJuegos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
@@ -768,9 +768,9 @@ public class JFrameForm extends javax.swing.JFrame {
         // add your handling code here:
     }//GEN-LAST:event_BotonModificarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void TerminarJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TerminarJuegosActionPerformed
         // add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_TerminarJuegosActionPerformed
 
     private void BotonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarMouseClicked
         String pais = jComboBox1.getSelectedItem().toString();
@@ -902,6 +902,18 @@ public class JFrameForm extends javax.swing.JFrame {
             int medallasTotales = oro + plata + bronce;
 
             con.modificarBD(pais, oro, plata, bronce, medallasTotales);
+            
+            int filaSeleccionada = Medallero.getSelectedRow();
+            
+            if (filaSeleccionada >= 0) {
+                    // Actualizar los valores de la fila seleccionada con el nuevo dato
+                    Medallero.setValueAt(oro, filaSeleccionada, 1);
+                    Medallero.setValueAt(plata, filaSeleccionada, 2);
+                    Medallero.setValueAt(bronce, filaSeleccionada, 3);
+                } else {
+                    // Manejar la situación cuando no hay una fila seleccionada
+                    JOptionPane.showMessageDialog(JFrameForm.this, "Seleccione una fila para actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
 
         } catch (NumberFormatException e){
             posibleAgregar = false;
@@ -1049,7 +1061,7 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JTextField Nota6;
     private javax.swing.JTextField Nota7;
     private javax.swing.JTextField Nota8;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton TerminarJuegos;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
