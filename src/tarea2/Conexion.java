@@ -13,9 +13,9 @@ import com.mysql.cj.xdevapi.PreparableStatement;
 
 public class Conexion {
     String bd = "registro";
-    String url = "jdbc:mysql://localhost:3306/";
-    String user = "root";
-    String password = "root";
+    private static String url = "jdbc:mysql://localhost:3306/";
+    private static String user = "root";
+    private static String password = "root";
     String driver = "com.mysql.cj.jdbc.Driver";
     Connection con;
 
@@ -61,7 +61,35 @@ public class Conexion {
         }
 
     }
-
+    
+    public void agregarBDNata(String nombre, String pais, float nota1, float nota2, float nota3, float nota4, float nota5, float nota6, float nota7, float nota8, float factor, float nota){
+        try{
+            if (con != null){
+                String sql = "INSERT INTO natacion (nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                java.sql.PreparedStatement pst = con.prepareStatement(sql);
+                
+                pst.setString(1, nombre);
+                pst.setString(2, pais);
+                pst.setFloat(3, nota1);
+                pst.setFloat(4, nota2);
+                pst.setFloat(5, nota3);
+                pst.setFloat(6, nota4);
+                pst.setFloat(7, nota5);
+                pst.setFloat(8, nota6);
+                pst.setFloat(9, nota7);
+                pst.setFloat(10, nota8);
+                pst.setFloat(11, factor);
+                pst.setFloat(12, nota);
+                
+                pst.executeUpdate(); 
+            } else{
+                System.err.println("La conexión es null.");
+            }
+        }catch (Exception e){
+            java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
+        }
+    }
+    
     public void mostrarBD() {
         try {
             if (con != null) {
@@ -113,7 +141,25 @@ public class Conexion {
             e.printStackTrace();
         }
     }
+    public static boolean paisNoExiste(String nombrePais) {
+        try (Connection conexion = DriverManager.getConnection(url, user, password)) {
+            // Consulta SQL parametrizada para buscar el país
+            String consulta = "SELECT * FROM natacion WHERE nombre = ?";
+            try (PreparedStatement statement = conexion.prepareStatement(consulta)) {
+                // Establecer el valor del parámetro en la consulta
+                statement.setString(1, nombrePais);
 
+                // Ejecutar la consulta
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    // Verificar si hay resultados
+                    return !resultSet.next();
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; // En caso de error, considerar que el país no existe
+        }
+    }
     public void modificarBD(String pais, int oro, int plata, int bronce, int medallastotales)
     {
         try {

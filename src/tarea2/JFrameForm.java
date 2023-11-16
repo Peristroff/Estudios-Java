@@ -26,6 +26,7 @@ import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import static tarea2.Conexion.paisNoExiste;
 
 /**
  * @author dodsiño Quiero un cesarito locoooooo
@@ -447,6 +448,11 @@ public class JFrameForm extends javax.swing.JFrame {
         NatacionAgregar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         NatacionAgregar.setText("Agregar");
         NatacionAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NatacionAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NatacionAgregarMouseClicked(evt);
+            }
+        });
         NatacionAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NatacionAgregarActionPerformed(evt);
@@ -1004,6 +1010,45 @@ public class JFrameForm extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void NatacionAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NatacionAgregarMouseClicked
+        float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, 
+                nota5 = 0, nota6 = 0, nota7 = 0, nota8 = 0, nota = 0 , factor = 0;
+        
+        String pais = jComboBox2.getSelectedItem().toString();
+        String nombre = NombreNata.getText();
+        String tnota1 = Nota1.getText();
+        String tnota2 = Nota2.getText();
+        String tnota3 = Nota3.getText();
+        String tnota4 = Nota4.getText();
+        String tnota5 = Nota5.getText();
+        String tnota6 = Nota6.getText();
+        String tnota7 = Nota7.getText();
+        String tnota8 = Nota8.getText();
+        String tfactor = Factor.getText();
+        String tresultado = AquiResultado.getText();
+        
+        try{
+            nota1 = Float.parseFloat(tnota1);
+            nota2 = Float.parseFloat(tnota2);
+            nota3 = Float.parseFloat(tnota3);
+            nota4 = Float.parseFloat(tnota4);
+            nota5 = Float.parseFloat(tnota5);
+            nota6 = Float.parseFloat(tnota6);
+            nota7 = Float.parseFloat(tnota7);
+            nota8 = Float.parseFloat(tnota8);
+            factor = Float.parseFloat(tfactor);
+            nota = Float.parseFloat(tresultado);
+            if(paisNoExiste(pais)){
+                Conexion con = new Conexion();
+                con.conectar();
+                con.agregarBDNata(nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota);
+            }
+        }catch(NumberFormatException e){
+            String mensajeError = "Error: Ingresa notas válidas.";
+            JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_NatacionAgregarMouseClicked
 
     /**
      * @param args the command line arguments
