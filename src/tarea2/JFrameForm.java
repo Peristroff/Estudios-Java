@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -170,13 +169,13 @@ public class JFrameForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        terminarJuegos = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        primerLugar = new javax.swing.JLabel();
-        segundoLugar = new javax.swing.JLabel();
-        tercerLugar = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -635,17 +634,17 @@ public class JFrameForm extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("3. ");
 
-        primerLugar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        primerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        primerLugar.setText("...");
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("...");
 
-        segundoLugar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        segundoLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        segundoLugar.setText("...");
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("...");
 
-        tercerLugar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        tercerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tercerLugar.setText("...");
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("...");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -666,15 +665,15 @@ public class JFrameForm extends javax.swing.JFrame {
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(primerLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(segundoLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tercerLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                 .addContainerGap(635, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -687,15 +686,15 @@ public class JFrameForm extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(primerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(segundoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tercerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(418, Short.MAX_VALUE))
         );
 
@@ -816,7 +815,23 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         }
 
-        ordenarTabla();
+        DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modelo);
+        Medallero.setRowSorter(sorter);
+
+        int columnaMedallasOro = 1; // La columna de medallas de oro es la segunda columna (0-indexed).
+        sorter.setComparator(columnaMedallasOro, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                // Ordenar de mayor a menor
+                return o2.compareTo(o1);
+            }
+        });
+
+        ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
+        sortKeys.add(new RowSorter.SortKey(columnaMedallasOro, SortOrder.DESCENDING));
+        sorter.setSortKeys(sortKeys);
+        sorter.sort();
 
     }//GEN-LAST:event_BotonAgregarMouseClicked
 
@@ -866,6 +881,7 @@ public class JFrameForm extends javax.swing.JFrame {
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
         // add your handling code here:
 
+        // FIXME actualizar la tabla con los nuevos valores, la base de datos ya se actualiza
         String pais = jComboBox1.getSelectedItem().toString();
         Conexion con = new Conexion();
         con.conectar();
@@ -989,58 +1005,6 @@ public class JFrameForm extends javax.swing.JFrame {
         // add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void terminarJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminarJuegosMouseClicked
-        // add your handling code here:
-        obtenerPrimerosLugares();
-    }//GEN-LAST:event_terminarJuegosMouseClicked
-
-    public void ordenarTabla()
-    {
-        DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
-        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modelo);
-        Medallero.setRowSorter(sorter);
-
-        int columnaMedallasOro = 1; // La columna de medallas de oro es la segunda columna (0-indexed).
-        sorter.setComparator(columnaMedallasOro, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                // Ordenar de mayor a menor
-                return o2.compareTo(o1);
-            }
-        });
-
-        ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
-        sortKeys.add(new RowSorter.SortKey(columnaMedallasOro, SortOrder.ASCENDING));
-        sorter.setSortKeys(sortKeys);
-        sorter.sort();
-    }
-
-    public void obtenerPrimerosLugares()
-    {
-        // Obtener el RowSorter asociado a la tabla
-        TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) Medallero.getRowSorter();
-
-        // Obtener el modelo de la tabla
-        DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
-
-        // Obtener las primeras N filas ordenadas
-        int numeroFilas = 3;
-        List<Integer> filasOrdenadas = new ArrayList<>();
-        for (int i = 0; i < numeroFilas && i < modelo.getRowCount(); i++) {
-            int indiceFila = Medallero.convertRowIndexToModel(i);
-            filasOrdenadas.add(indiceFila);
-        }
-
-        // Obtener los datos de las filas ordenadas
-        for (int fila : filasOrdenadas) {
-            Object pais = modelo.getValueAt(fila, 0); // Suponiendo que la columna 0 contiene el país
-            Object medallasOro = modelo.getValueAt(fila, 1); // Suponiendo que la columna 1 contiene las medallas de oro
-
-            System.out.println("País: " + pais + ", Medallas de Oro: " + medallasOro);
-        }
-
-    }
-
     /**
      * @param args the command line arguments
      */
@@ -1103,6 +1067,9 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1128,9 +1095,5 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel primerLugar;
-    private javax.swing.JLabel segundoLugar;
-    private javax.swing.JLabel tercerLugar;
-    private javax.swing.JButton terminarJuegos;
     // End of variables declaration//GEN-END:variables
 }

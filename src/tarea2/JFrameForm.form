@@ -800,7 +800,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                                  <Component id="terminarJuegos" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -812,17 +812,17 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel10" min="-2" pref="63" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="primerLugar" max="32767" attributes="0"/>
+                                                  <Component id="jLabel12" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel9" min="-2" pref="63" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="segundoLugar" max="32767" attributes="0"/>
+                                                  <Component id="jLabel13" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel11" min="-2" pref="63" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="tercerLugar" max="32767" attributes="0"/>
+                                                  <Component id="jLabel14" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -843,17 +843,17 @@
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="primerLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jLabel12" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="segundoLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jLabel13" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel11" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="tercerLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jLabel14" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="418" max="32767" attributes="0"/>
                       </Group>
@@ -911,7 +911,7 @@
                     <Property name="text" type="java.lang.String" value="3. "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="primerLugar">
+                <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="24" style="1"/>
@@ -920,7 +920,7 @@
                     <Property name="text" type="java.lang.String" value="..."/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="segundoLugar">
+                <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="24" style="1"/>
@@ -929,7 +929,7 @@
                     <Property name="text" type="java.lang.String" value="..."/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="tercerLugar">
+                <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="24" style="1"/>
