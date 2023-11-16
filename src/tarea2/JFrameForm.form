@@ -828,9 +828,15 @@
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="banderaPrimerLugar" min="-2" pref="193" max="-2" attributes="0"/>
+                                      <Component id="banderaSegundoLugar" min="-2" pref="193" max="-2" attributes="0"/>
+                                      <Component id="banderaTercerLugar" min="-2" pref="193" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="635" max="32767" attributes="0"/>
+                          <EmptySpace pref="441" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -845,18 +851,21 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="primerLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="banderaPrimerLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="segundoLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="banderaSegundoLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel11" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="tercerLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="banderaTercerLugar" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="418" max="32767" attributes="0"/>
+                          <EmptySpace pref="410" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -882,6 +891,7 @@
                     </Property>
                   </Properties>
                   <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="terminarJuegosMouseClicked"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="terminarJuegosActionPerformed"/>
                   </Events>
                 </Component>
@@ -931,6 +941,33 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="tercerLugar">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="banderaPrimerLugar">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="banderaSegundoLugar">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="banderaTercerLugar">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="24" style="1"/>

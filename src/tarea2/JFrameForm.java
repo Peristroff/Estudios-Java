@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -177,6 +178,9 @@ public class JFrameForm extends javax.swing.JFrame {
         primerLugar = new javax.swing.JLabel();
         segundoLugar = new javax.swing.JLabel();
         tercerLugar = new javax.swing.JLabel();
+        banderaPrimerLugar = new javax.swing.JLabel();
+        banderaSegundoLugar = new javax.swing.JLabel();
+        banderaTercerLugar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -622,6 +626,11 @@ public class JFrameForm extends javax.swing.JFrame {
         terminarJuegos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         terminarJuegos.setText("Terminar juegos");
         terminarJuegos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        terminarJuegos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                terminarJuegosMouseClicked(evt);
+            }
+        });
         terminarJuegos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 terminarJuegosActionPerformed(evt);
@@ -652,6 +661,18 @@ public class JFrameForm extends javax.swing.JFrame {
         tercerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tercerLugar.setText("...");
 
+        banderaPrimerLugar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        banderaPrimerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        banderaPrimerLugar.setText("...");
+
+        banderaSegundoLugar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        banderaSegundoLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        banderaSegundoLugar.setText("...");
+
+        banderaTercerLugar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        banderaTercerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        banderaTercerLugar.setText("...");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -679,8 +700,13 @@ public class JFrameForm extends javax.swing.JFrame {
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tercerLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addContainerGap(635, Short.MAX_VALUE))
+                                        .addComponent(tercerLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(banderaPrimerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(banderaSegundoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(banderaTercerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(441, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -692,16 +718,19 @@ public class JFrameForm extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(primerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(primerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(banderaPrimerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(segundoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(segundoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(banderaSegundoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tercerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(418, Short.MAX_VALUE))
+                    .addComponent(tercerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(banderaTercerLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(410, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1011,6 +1040,117 @@ public class JFrameForm extends javax.swing.JFrame {
         // add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void terminarJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminarJuegosMouseClicked
+        // add your handling code here:
+        // Obtener el RowSorter asociado a la tabla
+        TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) Medallero.getRowSorter();
+
+        // Obtener las claves de orden actual
+        List<? extends RowSorter.SortKey> sortKeys = sorter.getSortKeys();
+
+        // Supongamos que la primera clave de orden corresponde a las medallas de oro
+        RowSorter.SortKey primeraClaveOrden = sortKeys.get(0);
+
+        // Obtener el índice de la columna ordenada
+        int indiceColumnaOrdenada = primeraClaveOrden.getColumn();
+
+        // Obtener el modelo de la tabla
+        DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
+
+        String pais1 = "", pais2 = "", pais3 = "";
+
+        // Obtener las primeras 3 filas ordenadas
+        int numeroFilas = 3;
+        List<Integer> filasOrdenadas = new ArrayList<>();
+        for (int i = 0; i < numeroFilas && i < modelo.getRowCount(); i++) {
+            int indiceFila = Medallero.convertRowIndexToModel(i);
+            filasOrdenadas.add(indiceFila);
+        }
+
+        // Obtener los datos de las filas ordenadas
+        for (int i = 0; i < filasOrdenadas.size(); i++) {
+            int fila = filasOrdenadas.get(i);
+            Object pais = modelo.getValueAt(fila, 0); // Suponiendo que la columna 0 contiene el país
+            Object medallasOro = modelo.getValueAt(fila, 1); // Suponiendo que la columna 1 contiene las medallas de oro
+
+            if(i == 0)
+            {
+                pais1 = pais.toString();
+                primerLugar.setText(pais.toString());
+            }
+            else if(i == 1)
+            {
+                pais2 = pais.toString();
+                segundoLugar.setText(pais.toString());
+            }
+            else if(i == 2)
+            {
+                pais3 = pais.toString();
+                tercerLugar.setText(pais.toString());
+            }
+        }
+
+            // Primero se elimina el texto
+            banderaPrimerLugar.setText("");
+            banderaSegundoLugar.setText("");
+            banderaTercerLugar.setText("");
+
+            // Luego se agrega la imagen
+            try
+            {
+                String textoPais1 = pais1;
+                String textoPais2 = pais2;
+                String textoPais3 = pais3;
+                System.out.println(pais1 + " " + pais2 + " " + pais3);
+                String rutaImagen1 = mapaPaises.get(textoPais1);
+                String rutaImagen2 = mapaPaises.get(textoPais2);
+                String rutaImagen3 = mapaPaises.get(textoPais3);
+                System.out.println(rutaImagen1 + " " + rutaImagen2 + " " + rutaImagen3);
+                
+                // Carga la imagen utilizando ImageIO
+                java.awt.Image imagenOriginal1 = ImageIO.read(getClass().getResource(rutaImagen1));
+                java.awt.Image imagenOriginal2 = ImageIO.read(getClass().getResource(rutaImagen2));
+                java.awt.Image imagenOriginal3 = ImageIO.read(getClass().getResource(rutaImagen3));
+            
+                // Escala la imagen al tamaño de la etiqueta
+                int anchoEtiqueta = 211;
+                int altoEtiqueta = 121;
+                Image imagenEscalada1 = imagenOriginal1.getScaledInstance(anchoEtiqueta, altoEtiqueta, Image.SCALE_SMOOTH);
+                Image imagenEscalada2 = imagenOriginal2.getScaledInstance(anchoEtiqueta, altoEtiqueta, Image.SCALE_SMOOTH);
+                Image imagenEscalada3 = imagenOriginal3.getScaledInstance(anchoEtiqueta, altoEtiqueta, Image.SCALE_SMOOTH);
+            
+                // Crea un ImageIcon con la imagen escalada
+                ImageIcon iconoEscalado1 = new ImageIcon(imagenEscalada1);
+                ImageIcon iconoEscalado2 = new ImageIcon(imagenEscalada2);
+                ImageIcon iconoEscalado3 = new ImageIcon(imagenEscalada3);
+            
+                banderaPrimerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                banderaPrimerLugar.setMaximumSize(new java.awt.Dimension(230, 175));
+                banderaPrimerLugar.setMinimumSize(new java.awt.Dimension(230, 175));
+                banderaPrimerLugar.setPreferredSize(new java.awt.Dimension(230, 175));
+                banderaPrimerLugar.setIcon(iconoEscalado1);
+
+                banderaSegundoLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                banderaSegundoLugar.setMaximumSize(new java.awt.Dimension(230, 175));
+                banderaSegundoLugar.setMinimumSize(new java.awt.Dimension(230, 175));
+                banderaSegundoLugar.setPreferredSize(new java.awt.Dimension(230, 175));
+                banderaSegundoLugar.setIcon(iconoEscalado2);
+
+                banderaTercerLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                banderaTercerLugar.setMaximumSize(new java.awt.Dimension(230, 175));
+                banderaTercerLugar.setMinimumSize(new java.awt.Dimension(230, 175));
+                banderaTercerLugar.setPreferredSize(new java.awt.Dimension(230, 175));
+                banderaTercerLugar.setIcon(iconoEscalado3);
+
+            } 
+            catch (IOException e) 
+            {
+                e.printStackTrace();
+            }
+        
+
+    }//GEN-LAST:event_terminarJuegosMouseClicked
+
     private void NatacionAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NatacionAgregarMouseClicked
         float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, 
                 nota5 = 0, nota6 = 0, nota7 = 0, nota8 = 0, nota = 0 , factor = 0;
@@ -1106,6 +1246,9 @@ public class JFrameForm extends javax.swing.JFrame {
     private javax.swing.JTextField Nota6;
     private javax.swing.JTextField Nota7;
     private javax.swing.JTextField Nota8;
+    private javax.swing.JLabel banderaPrimerLugar;
+    private javax.swing.JLabel banderaSegundoLugar;
+    private javax.swing.JLabel banderaTercerLugar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
