@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package tarea2;
-
 import java.awt.Component;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
@@ -34,6 +33,7 @@ public class JFrameForm extends javax.swing.JFrame {
     private HashMap<String, String> mapaPaises = new HashMap<>();
     private boolean calculoRealizado = false;
     DefaultTableModel model;
+    DefaultTableModel model2;
     /**
      * Creates new form JFrameForm
      */
@@ -103,7 +103,22 @@ public class JFrameForm extends javax.swing.JFrame {
         model.addColumn("Medallas totales");
         model.addColumn("Bandera");
 
+        model2 = new DefaultTableModel();
+        model2.addColumn("Nombre");
+        model2.addColumn("Pais");
+        model2.addColumn("Nota1");
+        model2.addColumn("Nota2");
+        model2.addColumn("Nota3");
+        model2.addColumn("Nota4");
+        model2.addColumn("Nota5");
+        model2.addColumn("Nota6");
+        model2.addColumn("Nota7");
+        model2.addColumn("Nota8");
+        model2.addColumn("Factor");
+        model2.addColumn("Nota");
+        
         Medallero.setModel(model);
+        NotasNata.setModel(model2);
         
         Medallero.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
 
@@ -1099,6 +1114,7 @@ public class JFrameForm extends javax.swing.JFrame {
 
         // Obtener el modelo de la tabla
         DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
+        DefaultTableModel modelo2 = (DefaultTableModel) NotasNata.getModel();
 
         String pais1 = "", pais2 = "", pais3 = "";
 
@@ -1235,10 +1251,10 @@ public class JFrameForm extends javax.swing.JFrame {
             if (existePaisEnTabla(pais)) {
                 JOptionPane.showMessageDialog(this, "El país ya existe en la tabla.", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                model.addRow(new Object[]{nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota});
+                model2.addRow(new Object[]{nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota});
                 Conexion con = new Conexion();
                 con.conectar();
-                agregarBDNata(nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota);
+                con.BDNatacion(nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota);
                 
                 con.verificarPais(pais);
             }

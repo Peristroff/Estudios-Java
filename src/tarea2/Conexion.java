@@ -58,31 +58,36 @@ public class Conexion {
 
     }
     
-    public void agregarBDNata(String nombre, String pais, float nota1, float nota2, float nota3, float nota4, float nota5, float nota6, float nota7, float nota8, float factor, float nota){
-        try{
-            if (con != null){
-                String sql = "INSERT INTO natacion (nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                java.sql.PreparedStatement pst = con.prepareStatement(sql);
-                
-                pst.setString(1, nombre);
-                pst.setString(2, pais);
-                pst.setFloat(3, nota1);
-                pst.setFloat(4, nota2);
-                pst.setFloat(5, nota3);
-                pst.setFloat(6, nota4);
-                pst.setFloat(7, nota5);
-                pst.setFloat(8, nota6);
-                pst.setFloat(9, nota7);
-                pst.setFloat(10, nota8);
-                pst.setFloat(11, factor);
-                pst.setFloat(12, nota);
-                
-                pst.executeUpdate(); 
-            } else{
-                System.err.println("La conexión es null.");
-            }
-        }catch (Exception e){
-            java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, e);
+    public void BDNatacion(String nombre, String pais, float nota1, float nota2,
+                             float nota3, float nota4, float nota5, float nota6,
+                             float nota7, float nota8, float factor, float nota) {
+
+        String sql = "INSERT INTO natacion (nombre, pais, nota1, nota2, nota3, nota4, " +
+                     "nota5, nota6, nota7, nota8, factor, nota) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(url+bd,
+                user, password);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, nombre);
+            pstmt.setString(2, pais);
+            pstmt.setFloat(3, nota1);
+            pstmt.setFloat(4, nota2);
+            pstmt.setFloat(5, nota3);
+            pstmt.setFloat(6, nota4);
+            pstmt.setFloat(7, nota5);
+            pstmt.setFloat(8, nota6);
+            pstmt.setFloat(9, nota7);
+            pstmt.setFloat(10, nota8);
+            pstmt.setFloat(11, factor);
+            pstmt.setFloat(12, nota);
+
+            pstmt.executeUpdate();
+            System.out.println("Datos agregados correctamente a la base de datos.");
+
+        } catch (SQLException e) {
+            System.err.println("Error al agregar datos a la base de datos: " + e.getMessage());
         }
     }
     
