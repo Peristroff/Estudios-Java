@@ -1,15 +1,11 @@
 package tarea2;
 
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import com.mysql.cj.xdevapi.PreparableStatement;
 
 public class Conexion {
     String bd = "registro";

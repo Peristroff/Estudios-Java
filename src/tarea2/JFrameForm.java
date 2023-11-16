@@ -9,17 +9,13 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.SwingConstants;
 import java.awt.Image;
-import javax.swing.JLabel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
@@ -920,8 +916,7 @@ public class JFrameForm extends javax.swing.JFrame {
         String pais = jComboBox1.getSelectedItem().toString();
         Conexion con = new Conexion();
         con.conectar();
-        
-        boolean posibleAgregar = true;
+
         int oro = 0, plata = 0, bronce = 0;
         
         try
@@ -951,7 +946,6 @@ public class JFrameForm extends javax.swing.JFrame {
                 }
 
         } catch (NumberFormatException e){
-            posibleAgregar = false;
             String mensajeError = "Error: Ingresa números válidos de medallas.";
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
         }
