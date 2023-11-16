@@ -913,9 +913,9 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         }
 
-        DefaultTableModel modelo = (DefaultTableModel) NotasNata.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modelo);
-        NotasNata.setRowSorter(sorter);
+        Medallero.setRowSorter(sorter);
 
         int columnaMedallasOro = 1; // La columna de medallas de oro es la segunda columna (0-indexed).
         sorter.setComparator(columnaMedallasOro, new Comparator<Integer>() {
