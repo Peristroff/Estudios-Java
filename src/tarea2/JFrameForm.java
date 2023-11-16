@@ -23,7 +23,6 @@ import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import static tarea2.Conexion.paisNoExiste;
 
 /**
  * @author dodsiño Quiero un cesarito locoooooo
@@ -1172,11 +1171,7 @@ public class JFrameForm extends javax.swing.JFrame {
             nota8 = Float.parseFloat(tnota8);
             factor = Float.parseFloat(tfactor);
             nota = Float.parseFloat(tresultado);
-            if(paisNoExiste(pais)){
-                Conexion con = new Conexion();
-                con.conectar();
-                con.agregarBDNata(nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota);
-            }
+            
         }catch(NumberFormatException e){
             String mensajeError = "Error: Ingresa notas válidas.";
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
