@@ -829,7 +829,7 @@ public class JFrameForm extends javax.swing.JFrame {
         });
 
         ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
-        sortKeys.add(new RowSorter.SortKey(columnaMedallasOro, SortOrder.DESCENDING));
+        sortKeys.add(new RowSorter.SortKey(columnaMedallasOro, SortOrder.ASCENDING));
         sorter.setSortKeys(sortKeys);
         sorter.sort();
 
