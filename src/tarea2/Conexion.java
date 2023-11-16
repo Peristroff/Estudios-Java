@@ -136,26 +136,6 @@ public class Conexion {
         }
     }
 
-    public static boolean paisNoExiste(String nombrePais) {
-        try (Connection conexion = DriverManager.getConnection(url, user, password)) {
-            // Consulta SQL parametrizada para buscar el país
-            String consulta = "SELECT * FROM natacion WHERE nombre = ?";
-            try (PreparedStatement statement = conexion.prepareStatement(consulta)) {
-                // Establecer el valor del parámetro en la consulta
-                statement.setString(1, nombrePais);
-
-                // Ejecutar la consulta
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    // Verificar si hay resultados
-                    return !resultSet.next();
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false; // En caso de error, considerar que el país no existe
-        }
-    }
-
     public void modificarBD(String pais, int oro, int plata, int bronce, int medallastotales)
     {
         try {
