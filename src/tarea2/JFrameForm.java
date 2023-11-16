@@ -964,6 +964,20 @@ public class JFrameForm extends javax.swing.JFrame {
 
         return false;  // El país no existe en la tabla
     }
+    private boolean existePaisEnTabla2(String nuevoPais) {
+        int columnaPais = 1;  // Índice de la columna "Pais"
+
+        for (int fila = 0; fila < model2.getRowCount(); fila++) {
+            Object valorEnCelda = model2.getValueAt(fila, columnaPais);
+
+            // Comparar el valor de la celda con el nuevo país
+            if (valorEnCelda != null && valorEnCelda.toString().equals(nuevoPais)) {
+                return true;  // El país ya existe en la tabla
+            }
+        }
+
+        return false;  // El país no existe en la tabla
+    }
 
     private void FactorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FactorActionPerformed
         // add your handling code here:
@@ -1248,7 +1262,7 @@ public class JFrameForm extends javax.swing.JFrame {
         }
         
         if (posibleAgregar){
-            if (existePaisEnTabla(pais)) {
+            if (existePaisEnTabla2(pais)) {
                 JOptionPane.showMessageDialog(this, "El país ya existe en la tabla.", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 model2.addRow(new Object[]{nombre, pais, nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, factor, nota});
