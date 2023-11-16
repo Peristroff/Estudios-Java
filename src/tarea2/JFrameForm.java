@@ -29,7 +29,6 @@ import javax.swing.table.TableRowSorter;
  * @author juan o(*￣▽￣*)o "es poco, pero es trabajo honesto"
  * @author pablo
  */
-//aaaaa
 public class JFrameForm extends javax.swing.JFrame {    
     private HashMap<String, String> mapaPaises = new HashMap<>();
     private boolean calculoRealizado = false;
