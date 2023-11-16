@@ -901,12 +901,15 @@ public class JFrameForm extends javax.swing.JFrame {
             if (existePaisEnTabla(pais)) {
                 JOptionPane.showMessageDialog(this, "El país ya existe en la tabla.", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, banderaEscalada);
-                Conexion con = new Conexion();
-                con.conectar();
-                con.agregarBD(pais, oro, plata, bronce, medallasTotales);
-                
-                con.verificarPais(pais);
+                if(oro >= 0 && plata >= 0 && bronce >= 0){
+                    agregarFilaTabla(pais, oro, plata, bronce, medallasTotales, banderaEscalada);
+                    Conexion con = new Conexion();
+                    con.conectar();
+                    con.agregarBD(pais, oro, plata, bronce, medallasTotales);
+
+                    con.verificarPais(pais);
+                }
+                else{JOptionPane.showMessageDialog(this, "Verifique los numeros", "Error", JOptionPane.ERROR_MESSAGE);}
             }
         }
 
@@ -988,7 +991,6 @@ public class JFrameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_NatacionAgregarActionPerformed
 
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
-        // add your handling code here:
 
         String pais = jComboBox1.getSelectedItem().toString();
         Conexion con = new Conexion();
@@ -1007,12 +1009,10 @@ public class JFrameForm extends javax.swing.JFrame {
             bronce = Integer.parseInt(tBronce);
 
             int medallasTotales = oro + plata + bronce;
-
-            con.modificarBD(pais, oro, plata, bronce, medallasTotales);
-            
             int filaSeleccionada = Medallero.getSelectedRow();
-            
-            if (filaSeleccionada >= 0) {
+            if (oro >= 0 && plata >= 0 && bronce >= 0){
+                con.modificarBD(pais, oro, plata, bronce, medallasTotales);
+                if (filaSeleccionada >= 0) {
                     // Actualizar los valores de la fila seleccionada con el nuevo dato
                     Medallero.setValueAt(oro, filaSeleccionada, 1);
                     Medallero.setValueAt(plata, filaSeleccionada, 2);
@@ -1021,13 +1021,12 @@ public class JFrameForm extends javax.swing.JFrame {
                     // Manejar la situación cuando no hay una fila seleccionada
                     JOptionPane.showMessageDialog(JFrameForm.this, "Seleccione una fila para actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+            }else{JOptionPane.showMessageDialog(JFrameForm.this, "Verifique los numeros", "Error", JOptionPane.ERROR_MESSAGE);}
 
         } catch (NumberFormatException e){
             String mensajeError = "Error: Ingresa números válidos de medallas.";
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        
 
     }//GEN-LAST:event_BotonModificarMouseClicked
 
