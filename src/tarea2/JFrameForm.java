@@ -912,7 +912,6 @@ public class JFrameForm extends javax.swing.JFrame {
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
         // add your handling code here:
 
-        // FIXME actualizar la tabla con los nuevos valores, la base de datos ya se actualiza
         String pais = jComboBox1.getSelectedItem().toString();
         Conexion con = new Conexion();
         con.conectar();

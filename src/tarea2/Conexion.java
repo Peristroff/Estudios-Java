@@ -105,9 +105,7 @@ public class Conexion {
         }
     }
 
-    // FIXME la aplicacion busca el pais, pero no en la base de datos, en vez de eso se usa la tabla interna
     public void verificarPais(String pais) {
-
         try {
             if (con != null) {
                 String paisBuscado = "NombreDelPais";
@@ -137,6 +135,7 @@ public class Conexion {
             e.printStackTrace();
         }
     }
+
     public static boolean paisNoExiste(String nombrePais) {
         try (Connection conexion = DriverManager.getConnection(url, user, password)) {
             // Consulta SQL parametrizada para buscar el país
@@ -156,6 +155,7 @@ public class Conexion {
             return false; // En caso de error, considerar que el país no existe
         }
     }
+
     public void modificarBD(String pais, int oro, int plata, int bronce, int medallastotales)
     {
         try {

@@ -18,7 +18,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class TablaLocal {
 
-    // TODO agregar informacion de la tabla local e interacciones aqui
+    // agregar informacion de la tabla local e interacciones aqui
     // Intente hacer que la tabla local se ordenara desde aqui, pero no pude
     public void ordenarTabla(DefaultTableModel Medallero)
     {
