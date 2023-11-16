@@ -4,11 +4,8 @@
  */
 package tarea2;
 
-import javax.swing.JFrame;
 import javax.swing.UIManager;
-import javax.swing.*;
 
-import tarea2.Conexion;
 
 /**
  * 

@@ -13,14 +13,19 @@ import javax.swing.SwingConstants;
 import java.awt.Image;
 import javax.swing.JLabel;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  * @author dodsiño Quiero un cesarito locoooooo
@@ -29,7 +34,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JFrameForm extends javax.swing.JFrame {    
     private HashMap<String, String> mapaPaises = new HashMap<>();
-    
+
     DefaultTableModel model;
     /**
      * Creates new form JFrameForm
@@ -810,6 +815,23 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         }
 
+        DefaultTableModel modelo = (DefaultTableModel) Medallero.getModel();
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modelo);
+        Medallero.setRowSorter(sorter);
+
+        int columnaMedallasOro = 1; // La columna de medallas de oro es la segunda columna (0-indexed).
+        sorter.setComparator(columnaMedallasOro, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                // Ordenar de mayor a menor
+                return o2.compareTo(o1);
+            }
+        });
+
+        ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
+        sortKeys.add(new RowSorter.SortKey(columnaMedallasOro, SortOrder.DESCENDING));
+        sorter.setSortKeys(sortKeys);
+        sorter.sort();
 
     }//GEN-LAST:event_BotonAgregarMouseClicked
 
@@ -887,6 +909,7 @@ public class JFrameForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, mensajeError, "Error", JOptionPane.ERROR_MESSAGE);
         }
 
+        
 
     }//GEN-LAST:event_BotonModificarMouseClicked
 
@@ -967,7 +990,7 @@ public class JFrameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_MedalleroMouseClicked
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
+        // add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
