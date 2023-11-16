@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
+
 /**
  * @author dodsiño Quiero un cesarito locoooooo
  * @author juan o(*￣▽￣*)o "es poco, pero es trabajo honesto"
@@ -31,7 +32,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class JFrameForm extends javax.swing.JFrame {    
     private HashMap<String, String> mapaPaises = new HashMap<>();
-
+    private boolean calculoRealizado = false;
     DefaultTableModel model;
     /**
      * Creates new form JFrameForm
@@ -108,8 +109,8 @@ public class JFrameForm extends javax.swing.JFrame {
 
         // Esto permite que la tabla sea de solo lectura en el UI
         Medallero.setDefaultEditor(Object.class, null);
+        NatacionAgregar.setEnabled(false);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -914,10 +915,6 @@ public class JFrameForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BotonAgregarMouseClicked
 
-    private void agregarBDNata(String nombre, String pais, float nota1, float nota2, float nota3, float nota4, float nota5, float nota6, float nota7, float nota8, float factor, float nota) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     private class ImageRenderer extends DefaultTableCellRenderer {
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -1041,6 +1038,7 @@ public class JFrameForm extends javax.swing.JFrame {
             }
         resultado = resultado * factor;
         AquiResultado.setText(String.valueOf(resultado));
+        NatacionAgregar.setEnabled(true);
     }//GEN-LAST:event_BotonCalcularMouseClicked
 
     private void MedalleroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedalleroMouseClicked
