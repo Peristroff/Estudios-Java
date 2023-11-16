@@ -1225,7 +1225,8 @@ public class JFrameForm extends javax.swing.JFrame {
             nota7 = Float.parseFloat(tnota7);
             nota8 = Float.parseFloat(tnota8);
             factor = Float.parseFloat(tfactor);
-            nota = Float.parseFloat(tresultado);            
+            nota = Float.parseFloat(tresultado);
+            
         }catch(NumberFormatException e){
             posibleAgregar = false;
             String mensajeError = "Error: Ingresa notas válidas.";
